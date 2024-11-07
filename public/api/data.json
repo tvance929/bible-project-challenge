@@ -3,6 +3,7 @@
     "videoCategory": {
       "title": "Royal Priesthood Series",
       "color": "#6a628b",
+      "textColor": "dark",
       "description": "What is God’s ideal calling for humans? Humans are called to be royal priests who represent God's character and presence to the world. Check out our video series on the royal priesthood here.",
       "id": "30",
       "images": {
@@ -27,7 +28,7 @@
           "shareUrl": "https://bibleproject.com/explore/video/royal-priesthood",
           "subtitle": "4:54",
           "title": "The Royal Priesthood",
-          "publishDate": "2021-12-14 00:00:00",
+          "publishDate": "2024-11-4 00:00:00",
           "youtubeId": "Tw-bBfBDpE0"
         },
         {

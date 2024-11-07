@@ -1,1 +1,188 @@
+body {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
 
+.main-content {
+  max-width: 1500px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.header-text {
+  position: absolute;
+  top: 20px;
+  left: 34px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  padding-left: 3rem;
+}
+
+.separator-bar {
+  height: 12px;
+  background-color: #ff00ff;
+  margin: 0 0 2rem;
+}
+
+.separator-line {
+  width: 50px;
+  height: 1px;
+  background-color: #ffffff;
+  margin: 1rem 0 2rem 0;
+}
+
+/* BANNER */
+.banner {
+  color: white;
+  padding: 4rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 550px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+} 
+
+.banner h1 {
+  font-size: 3rem;
+  margin: 0;
+  padding-bottom: 1rem;
+  font-weight: 800;
+}
+
+.text-content {
+  max-width: 60%;
+  box-sizing: border-box;
+}
+
+.banner p {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-top: 0;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.video-wrapper {
+  max-width: '40%';
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+}
+
+/* TILES */
+.video-tiles-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.video-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+}
+
+.video-tile {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  text-align: left;
+  padding: 1rem;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+}
+
+.video-tile:hover {
+  transform: scale(1.02);
+}
+
+.video-tile img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-tile h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.video-tile p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.video-tile .timestamp {
+  font-size: 0.8rem;
+  color: #999;
+  margin: 0.5rem 0;
+}
+
+.icon-play {
+  width: 24px; 
+  height: 24px;
+  position: absolute;
+  color: #333;
+  bottom: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+/* BADGES */
+.new-badge {
+  position: absolute;
+  background-color: #ff5252;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  top: 20px;
+  left: 20px;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .banner {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+
+  .video-tiles {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-tile {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+}
