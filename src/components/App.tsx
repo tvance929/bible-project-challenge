@@ -25,6 +25,7 @@ const App: React.FC = () => {
   const [videos, setVideos] = useState<Video[]>([]);
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
   const [videoCategory, setVideoCategory] = useState<VideoCategory | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     fetch('/api/data.json')
@@ -57,6 +58,18 @@ const App: React.FC = () => {
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
+  const handleVideoClick = (video: Video) => {
+    setSelectedVideo(video);
+    
+    if (window.innerWidth <= 430) {
+      setIsModalOpen(true);
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="main-content">
       <Banner
@@ -67,7 +80,9 @@ const App: React.FC = () => {
         textColor={videoCategory ? videoCategory.textColor : "light"}
         numVideos={videoCategory ? videoCategory.numVideos : 0}
       />
+
       <div className="separator-bar"></div>
+
       <div className="video-tiles-container">
         <div className="video-tiles">
           {videos.map((video, index) => (
@@ -78,11 +93,28 @@ const App: React.FC = () => {
               thumbnail={video.thumbnail}
               isNew={video.isNew}
               durationSeconds={video.durationSeconds}
-              onClick={() => setSelectedVideo(video)}
+              onClick={() => handleVideoClick(video)}
             />
           ))}
         </div>
       </div>
+
+      {isModalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            {selectedVideo && (
+              <iframe
+                className="modal-iframe"
+                src={selectedVideo.videoUrl}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

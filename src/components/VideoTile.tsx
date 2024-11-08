@@ -18,7 +18,6 @@ const VideoTile: React.FC<VideoTileProps> = ({ title, description, thumbnail, on
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     if (queryParams.has('debug')) {
-      console.log(`in debug mode!`);
       setShouldFail(true);
     }
   }, []);
