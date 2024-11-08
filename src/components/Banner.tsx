@@ -6,36 +6,36 @@ interface BannerProps {
     backgroundImage: string;
     videoUrl: string | null;
     textColor: string;
+    numVideos: number;
 }
 
-const Banner: React.FC<BannerProps> = ({ title, description, backgroundImage, videoUrl, textColor }) => {
+const Banner: React.FC<BannerProps> = ({ title, description, backgroundImage, videoUrl, textColor, numVideos }) => {
     return (
         <div className="banner"
             style={{
                 backgroundImage: `url(${backgroundImage})`,
-                color: textColor === 'dark' ? '#1e1e1e' : '#ffffff',
+                color: textColor === 'dark' ? 'var(--dark-text-color)' : 'var(--light-text-color)',
             }}
         >
             <div className="banner-content">
                 <div className="text-content">
-                    <h2 className="header-text"
-                        style={{
-                            color: textColor === 'dark' ? '#1e1e1e' : '#ffffff',
-                        }}
-                    >BibleProject</h2>
+                    <h2 className="header-text">BibleProject</h2>
                     <h1>{title}</h1>
-                    <div className="separator-line"
+                    <div className="separator-line"></div>
+                    <p className="category-description">{description}</p>
+                    <p className="episode-count"
                         style={{
-                            backgroundColor: textColor === 'dark' ? '#1e1e1e' : '#ffffff',
-                        }}></div>
-                    <p>{description}</p>
+                            color: textColor === 'dark' ? 'var(--dark-secondary-color)' : 'var(--light-secondary-color)',
+                        }}
+                    >{numVideos} Sessions</p>
                 </div>
                 <div className="video-content">
                     {videoUrl && (
                         <div className="video-wrapper">
                             <iframe
-                                width="560"
-                                height="315"
+                                className="responsive-iframe"
+                                width="640"
+                                height="360"
                                 src={videoUrl}
                                 title="YouTube video player"
                                 frameBorder="0"

@@ -15,7 +15,10 @@ interface VideoCategory {
   title: string;
   description: string;
   backgroundImage: string;
+  bgMedium: string,
+  bgSmall: string,
   textColor: string;
+  numVideos: number;
 }
 
 const App: React.FC = () => {
@@ -45,7 +48,10 @@ const App: React.FC = () => {
           title: json.data.videoCategory.title,
           description: json.data.videoCategory.description,
           backgroundImage: json.data.videoCategory.images.large,
-          textColor: json.data.videoCategory.textColor
+          bgMedium: json.data.videoCategory.images.medium,
+          bgSmall: json.data.videoCategory.images.small,
+          textColor: json.data.videoCategory.textColor,
+          numVideos: json.data.videoCategory.numVideos
         });
       })
       .catch(error => console.error('Error fetching data:', error));
@@ -59,6 +65,7 @@ const App: React.FC = () => {
         backgroundImage={videoCategory ? videoCategory.backgroundImage : ""}
         videoUrl={selectedVideo ? selectedVideo.videoUrl : null}
         textColor={videoCategory ? videoCategory.textColor : "light"}
+        numVideos={videoCategory ? videoCategory.numVideos : 0}
       />
       <div className="separator-bar"></div>
       <div className="video-tiles-container">
@@ -81,7 +88,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-/* export const App = () => {
-  return <h1>BibleProject</h1>;
-}; */
