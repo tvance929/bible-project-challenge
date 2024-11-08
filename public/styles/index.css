@@ -58,7 +58,6 @@ body {
 .separator-line {
   width: 50px;
   height: 1px;
-  background-color: #ffffff;
   margin: 1rem 0 2rem 0;
 }
 
@@ -104,7 +103,7 @@ body {
   background-color: #fff;
   padding: 1rem;
   border-radius: 8px;
-  width: 90%; /* Ensures the modal is responsive */
+  width: 90%; 
   max-width: 400px;
   text-align: center;
   display: flex;
@@ -118,19 +117,6 @@ body {
   aspect-ratio: 16/9; 
   border: none;
 }
-
-/* .modal-content {
-  position: relative;
-  background-color: white;
-  padding: 1rem;
-  border-radius: 1px;
-  max-width: 90%;
-}
-
-.modal-iframe {
-  width: 320px;
-  height: 180px;
-} */
 
 /* TILES */
 .video-tiles-container {

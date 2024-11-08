@@ -21,7 +21,11 @@ const Banner: React.FC<BannerProps> = ({ title, description, backgroundImage, vi
                 <div className="text-content">
                     <h2 className="header-text">BibleProject</h2>
                     <h1>{title}</h1>
-                    <div className="separator-line"></div>
+                    <div className="separator-line"
+                        style={{
+                            backgroundColor: textColor === 'dark' ? 'var(--dark-text-color)' : 'var(--light-text-color)',
+                        }}
+                    ></div>
                     <p className="category-description">{description}</p>
                     <p className="episode-count"
                         style={{
