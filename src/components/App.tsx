@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Banner from './Banner'
+import Banner from './Banner';
 import VideoTile from './VideoTile';
 
 interface Video {
